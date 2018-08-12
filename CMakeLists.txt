@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 3.0.0)
 project(jenkins-test-build-project)
 set(CMAKE_CXX_STANDARD 14)
 
-if( ${CMAKE_TEST_VARIABLE} STREQUAL "test_variable")
-    message("Ii is equal to test_variable")
+if( DEFINED ${CMAKE_TEST_VARIABLE} AND ${CMAKE_TEST_VARIABLE} STREQUAL "test_variable")
+    message("The CMAKE_TEST_VARIABLE is equal to test_variable")
 else()
-    message( "It is ${CMAKE_TEST_VARIABLE}")
+    message( "The CMAKE_TEST_VARIABLE is ${CMAKE_TEST_VARIABLE}")
 endif()
 
 
